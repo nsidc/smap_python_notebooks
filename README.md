@@ -9,18 +9,30 @@ These notebooks were originally provided to NSIDC by Adam Purdy.
 
 # Usage
 
-## Prerequisites
-
-Install the [Miniconda
-python](https://conda.io/docs/user-guide/install/index.html) package manager.
-
 ## Starting the Jupyter Notebook server
 
-1. Create a conda environment with the required dependencies:
+### With Docker
+
+1. Install [Docker](https://docs.docker.com/install/) and [docker-compose](https://docs.docker.com/compose/install/)
+2. Run the Jupyter notebook server using docker-compose:
+
+    docker-compose -f docker-compose.yml up
+
+_Note: Some notebooks have cells that create and interact with files. Sometimes,
+the full path to these files will be displayed in the notebook's outputs. When
+using Docker, files and directories reported to be within `/opt/smap/notebooks/`
+can be accessed directly from the local `./notebooks/` directory._
+
+### Without Docker
+
+1. Install the [Miniconda
+   python](https://conda.io/docs/user-guide/install/index.html) package manager.
+
+2. Create a conda environment with the required dependencies:
 
         conda env create -f environment.yml
     
-2. Run the notebook:
+3. Run the notebook:
 
         ./start_notebook.sh
 
