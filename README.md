@@ -16,7 +16,7 @@ These notebooks were originally provided to NSIDC by Adam Purdy.
 1. Install [Docker](https://docs.docker.com/install/) and [docker-compose](https://docs.docker.com/compose/install/)
 2. Run the Jupyter notebook server using docker-compose:
 
-    docker-compose -f docker-compose.yml up
+        docker-compose -f docker-compose.yml up
 
 _Note: Some notebooks have cells that create and interact with files. Sometimes,
 the full path to these files will be displayed in the notebook's outputs. When
