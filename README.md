@@ -31,8 +31,12 @@ can be accessed directly from the local `./notebooks/` directory._
 2. Create a conda environment with the required dependencies:
 
         conda env create -f environment.yml
+        
+3. Activate the smap conda environment:
+
+        source activate smap
     
-3. Run the notebook:
+4. Run the notebook:
 
         ./start_notebook.sh
 
