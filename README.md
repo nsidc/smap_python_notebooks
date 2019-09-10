@@ -14,7 +14,7 @@ These notebooks were originally provided to NSIDC by Adam Purdy.
 See the [LICENSE](LICENSE) for details on permissions and warranties. Please contact nsidc@nsidc.org for more information.
 
 ## Requirements
-* Docker
+* Docker or Miniconda
 * Python with Jupyter
 
 ## Installation
