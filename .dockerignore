@@ -1,2 +1,5 @@
 *.md
 .git*
+.ipynb_checkpoints/
+notebooks/data
+notebooks/data/.ipynb_checkpoints
