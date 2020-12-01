@@ -12,3 +12,5 @@ dependencies:
   - python >=3.5.0,<4.0.0a
   - xarray >=0.10.9,<1.0.0a
   - requests >=2.21.0,<3.0.0a
+  - h5py >=3.1.0,<4.0.0a
+  - jupyterlab
