@@ -1,7 +1,7 @@
 version: '3'
 services:
   smap_notebooks:
-    image: nsidc/smap_python_notebooks:test
+    build: .
     ports:
       - "8888:8888"
     volumes:
