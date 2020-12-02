@@ -120,3 +120,5 @@ This software was developed by the National Snow and Ice Data Center with fundin
 
 - Add versioning to this project and docker tag images with explicit versions
   instead of just `latest`.
+
+- Add and use an `environment-lock.yml` to fully pin dependencies
