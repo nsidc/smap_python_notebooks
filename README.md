@@ -118,6 +118,9 @@ This software was developed by the National Snow and Ice Data Center with fundin
 
 ## DEV TODOs
 
+- Fix CircleCI config: why does the push to Dockerhub fail with `denied:
+  requested access to the resource is denied`?? Login works.
+
 - Add versioning to this project and docker tag images with explicit versions
   instead of just `latest`.
 
