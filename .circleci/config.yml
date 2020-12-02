@@ -1,0 +1,72 @@
+version: 2
+
+setup: &setup
+  docker:
+    - image: docker:17.05.0-ce-git
+  working_directory: ~/smap_python_notebooks
+
+jobs:
+  build:
+    <<: *setup
+    steps:
+      - checkout
+      - setup_remote_docker
+      - run:
+          name: Build Docker image
+          command: |
+            DOCKER_IMAGE=nsidc/smap_python_notebooks
+
+            echo "circle_tag: ${CIRCLE_TAG}"
+            echo "circle_branch: ${CIRCLE_BRANCH}"
+            if [[ "${CIRCLE_TAG}" ]]; then
+              TAG=${CIRCLE_TAG}
+            elif [[ "${CIRCLE_BRANCH}" = "main" ]]; then
+              TAG="latest"
+            else
+              TAG=${CIRCLE_BRANCH}
+            fi
+            echo "tag: ${TAG}"
+
+            docker build -t ${DOCKER_IMAGE}:${TAG} .
+
+            mkdir -p build
+            docker save -o build/saved-docker-image.tar ${DOCKER_IMAGE}:${TAG}
+            echo "${DOCKER_IMAGE}:${TAG}" > build/docker-image-name.txt
+
+      - persist_to_workspace:
+          root: ~/smap_python_notebooks
+          paths:
+            - build
+
+  deploy:
+    <<: *setup
+    steps:
+      - setup_remote_docker
+      - attach_workspace:
+          at: ~/smap_python_notebooks
+      - run:
+          name: Login and push image to Docker Hub
+          command: |
+            docker load < build/saved-docker-image.tar
+            docker login -u ${DOCKER_USER} -p ${DOCKER_PASS}
+            docker push $(cat build/docker-image-name.txt)
+
+workflows:
+  version: 2
+
+  build-and-deploy:
+    jobs:
+      - build:
+          filters:
+            tags:
+              only: /^.*$/
+      - deploy:
+          context: org-global
+          requires:
+            - build
+          filters:
+            tags:
+              only: /^.*$/
+            branches:
+              only:
+                - main
