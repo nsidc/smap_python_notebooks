@@ -13,4 +13,4 @@ RUN conda config --add channels conda-forge && \
 
 EXPOSE 8888
 
-CMD ./start_notebook.sh
+CMD ./start_jupyterlab.sh

@@ -22,12 +22,12 @@ contact nsidc@nsidc.org for more information.
 
 ## Installation
 
-### Starting the Jupyter Notebook server
+### Starting the Jupyter Lab server
 
 #### With Docker [Preferred method]
 
 1. Install [Docker](https://docs.docker.com/install/) and [docker-compose](https://docs.docker.com/compose/install/)
-2. Run the Jupyter notebook server using docker-compose:
+2. Run the Jupyter lab server using docker-compose:
 
         docker-compose -f docker-compose.yml up
 
@@ -64,13 +64,13 @@ $ docker-compose -f docker-compose-dev.yml up
 
 4. Run the notebook:
 
-        ./start_notebook.sh
+        ./start_jupyterlab.sh
 
 ## Usage
 
 ### Accessing the tutorial notebooks
 
-After running `docker-compose up` or `./start_notebook.sh` depending on
+After running `docker-compose up` or `./start_jupyterlab.sh` depending on
 installation method above, logs should be printed to the console that look
 something like this:
 
