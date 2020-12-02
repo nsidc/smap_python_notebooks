@@ -40,8 +40,9 @@ can be accessed directly from the local `./notebooks/` directory._
 
 Note that the `docker-compose.yml` file pulls the `latest` built
 `nsidc/smap_python_notebook` image from Dockerhub. If you need to adjust the
-runtime environment, you may want to build your own version of the image with
-the included `docker-compose-dev.yml`:
+runtime environment (e.g., add new python dependencies), you may want to build
+your own version of the image with the included `docker-compose-dev.yml`
+instead. This is usually an option only for advanced users:
 
 ```
 $ docker-compose -f docker-compose-dev.yml build
