@@ -7,11 +7,13 @@ downloading and visualizing Soil Moisture Active Passive (SMAP) data.
 
 These notebooks were originally provided to NSIDC by Adam Purdy.
 
+## Warning - this repository has been archived
+
+Updated material can be found [here](https://github.com/nsidc/NSIDC-Data-Tutorials/tree/main/notebooks/SMAP).
+
 ## Level of Support
 
-* This repository is fully supported by NSIDC. If you discover any problems or
-  bugs, please submit an Issue. If you would like to contribute to this
-  repository, you may fork the repository and submit a pull request.
+* This repository is no longer supported by NSIDC. 
 
 See the [LICENSE](LICENSE) for details on permissions and warranties. Please
 contact nsidc@nsidc.org for more information.
